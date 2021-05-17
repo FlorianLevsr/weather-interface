@@ -45,7 +45,7 @@ const ResultPage: FC<ResultPageProps> = (resultPageProps) => {
 
 export const getServerSideProps: GetServerSideProps = async ({ req, query }) => {
 
-  const result = await fetch('http://localhost:3000/api/weather/fetch-api', {
+  const result = await fetch('/pages/api/weather/fetch-api', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
