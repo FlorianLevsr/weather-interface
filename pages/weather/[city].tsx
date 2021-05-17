@@ -45,7 +45,9 @@ const ResultPage: FC<ResultPageProps> = (resultPageProps) => {
 
 export const getServerSideProps: GetServerSideProps = async ({ req, query }) => {
 
-  const result = await fetch('https://weather-interface.netlify.app/api/weather/fetch-api', {
+  const { PRODUCTION_BASE_URL } = process.env;
+
+  const result = await fetch( PRODUCTION_BASE_URL + '/api/weather/fetch-api', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
